@@ -1,0 +1,26 @@
+{
+  "name": "news-explorer-frontend",
+  "version": "1.0.0",
+  "description": "frontend of news-explorer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TroyKiri/news-explorer-frontend.github.io.git"
+  },
+  "author": "Kirill Troitsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TroyKiri/news-explorer-frontend.github.io/issues"
+  },
+  "homepage": "https://github.com/TroyKiri/news-explorer-frontend.github.io#readme",
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.4"
+  }
+}
