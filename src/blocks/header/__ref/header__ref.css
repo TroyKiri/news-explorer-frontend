@@ -1,0 +1,9 @@
+@import url(./_not-auth/header__ref_not-auth.css);
+
+.header__ref {
+  margin-right: 0;
+}
+
+.header__ref:last-child {
+  margin-left: 34px;
+}

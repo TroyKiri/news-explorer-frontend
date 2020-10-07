@@ -1,0 +1,10 @@
+@import url(./__header/button__header.css);
+
+.button {
+  box-sizing: border-box;
+  border-radius: 100px;
+}
+
+.button:hover {
+  cursor: url('../../images/Pointer.png'), pointer;
+}

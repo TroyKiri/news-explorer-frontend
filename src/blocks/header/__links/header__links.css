@@ -1,0 +1,11 @@
+@import url(./__link/header__link.css);
+@import url(./__link/_active/header__link_active.css);
+
+.header__links {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
