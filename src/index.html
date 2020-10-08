@@ -26,8 +26,27 @@
         </div>
       </header>
       <section class="search">
+        <div class="search__container">
+          <h1 class="search__title">Что творится в мире?</h1>
+          <h2 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</h2>
+          <form class="search__form">
+            <input class="search__input" placeholder="Введите тему новости" type="text">
+            <button class="button button__search" type="submit">Искать</button>
+          </form>
+        </div>
       </section>
     </div>
+    <section class="about">
+      <img class="about__photo" src="<%=require('./images/image-03.png')%>" alt="my photo">
+      <div class="about__container">
+        <h2 class="about__me">Об авторе</h2>
+        <p class="about__text">Это блок с описанием автора проекта.
+          Здесь следует указать, как вас зовут, чем вы занимаетесь,
+          какими технологиями разработки владеете.Также можно рассказать
+          о процессе обучения в Практикуме, чему вы тут научились, и чем
+          можете помочь потенциальным заказчикам.</p>
+      </div>
+    </section>
   </div>
     <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
