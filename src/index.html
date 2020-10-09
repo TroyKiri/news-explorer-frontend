@@ -59,8 +59,8 @@
         </ul>
       </div>
     </footer>
-    <div class="popup" id='popup-login'>
-      <div class="popup__content">
+    <!-- <div class="popup" id='popup-login'>
+      <div class="popup__content popup__login">
         <img src="<%=require('./images/back.png')%>" alt="close" class="popup__close">
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form popup__form_login" name="login">
@@ -72,6 +72,24 @@
             <p class="popup__error-message popup__error-messagge_valid-input">Неправильный пароль</p>
             <button id="submit" type = 'submit' class="button popup__button popup__button_not-active">Войти</button>
             <p class="popup__alt">или <a class="popup__link" href="#">Зарегистрироваться</a></p>
+        </form>
+      </div>
+    </div> -->
+    <div class="popup" id='popup-signup'>
+      <div class="popup__content popup__signup">
+        <img src="<%=require('./images/back.png')%>" alt="close" class="popup__close">
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form popup__form_signup" name="signup">
+            <h3 class="popup__input-name">Email</h3>
+            <input type="email" name="email" class="popup__input popup__input_type_email popup__input_valid" placeholder="Введите почту" minlength="2" maxlength="30" required>
+            <p class="popup__error-message popup__error-messagge_valid-input">Неправильный формат email</p>
+            <h3 class="popup__input-name">Пароль</h3>
+            <input type="password" name="password" class="popup__input popup__input_type_password popup__input_valid" placeholder="Введите пароль" required>
+            <p class="popup__error-message popup__error-messagge_valid-input">Неправильный пароль</p>
+            <h3 class="popup__input-name">Имя</h3>
+            <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Введите своё имя" required>
+            <button id="submit" type = 'submit' class="button popup__button popup__button_not-active">Зарегистрироваться</button>
+            <p class="popup__alt">или <a class="popup__link" href="#">Войти</a></p>
         </form>
       </div>
     </div>
