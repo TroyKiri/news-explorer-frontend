@@ -5,6 +5,7 @@
 @import url(./blocks/search/search.css);
 @import url(./blocks/button/button.css);
 @import url(./blocks/about/about.css);
+@import url(./blocks/footer/footer.css);
 
 .body {
   margin: 0 auto;

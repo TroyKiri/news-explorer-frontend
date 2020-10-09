@@ -42,11 +42,23 @@
         <h2 class="about__me">Об авторе</h2>
         <p class="about__text">Это блок с описанием автора проекта.
           Здесь следует указать, как вас зовут, чем вы занимаетесь,
-          какими технологиями разработки владеете.Также можно рассказать
-          о процессе обучения в Практикуме, чему вы тут научились, и чем
-          можете помочь потенциальным заказчикам.</p>
+          какими технологиями разработки владеете.<br><br>Также можно рассказать о процессе обучения в Практикуме,
+            чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
       </div>
     </section>
+    <footer class="footer">
+      <h3 class="footer__site">© 2020 Supersite, Powered by News API</h3>
+      <div class="footer__container">
+        <ul class="footer__links">
+          <li class="footer__link_main"><a class="footer__link footer__link_main" href="https://yandex.ru/" target="_blank">Главная</a></li>
+          <li class="footer__link_praktikum"><a class="footer__link footer__link_praktikum" href="https://praktikum.yandex.ru/" target="_blank">Яндекс.Практикум</a></li>
+        </ul>
+        <ul class="footer__icons">
+          <li class="footer__icon"><a class="footer__icon-link" href="https://github.com/" target="_blank"><img class="footer__icon-image" alt="github" src="<%=require('./images/github.png')%>"></a></li>
+          <li class="footer__icon"><a class="footer__icon-link" href="https://www.facebook.com/" target="_blank"><img class="footer__icon-image" alt="facebook" src="<%=require('./images/fb.png')%>"></a></li>
+        </ul>
+      </div>
+    </footer>
   </div>
     <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
