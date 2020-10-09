@@ -1,0 +1,16 @@
+@import url(./_active/popup__button_active.css);
+@import url(./_not-active/popup__button_not-active.css);
+/*@import url(./_save/popup__button_save.css);*/
+
+
+.popup__button {
+  width: 100%;
+  height: 64px;
+  border: none;
+  margin-top: 39px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}

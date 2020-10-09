@@ -1,0 +1,10 @@
+@import url(./_valid-input/popup__error-messagge_valid-input.css);
+@import url(./_invalid-input/popup__error-message_invalid-input.css);
+
+.popup__error-message {
+  font-family: 'Inter';
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+}
