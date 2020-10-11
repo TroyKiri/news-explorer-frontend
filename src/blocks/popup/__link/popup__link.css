@@ -1,3 +1,5 @@
+@import url(./_success/popup__link_success.css);
+
 .popup__link {
   color: #2F71E5;
   text-decoration: none;

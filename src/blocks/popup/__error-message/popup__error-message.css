@@ -1,5 +1,6 @@
 @import url(./_valid-input/popup__error-messagge_valid-input.css);
 @import url(./_invalid-input/popup__error-message_invalid-input.css);
+@import url(./_user/popup__error-message_user.css);
 
 .popup__error-message {
   font-family: 'Inter';

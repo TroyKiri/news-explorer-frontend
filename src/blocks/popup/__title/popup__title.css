@@ -1,3 +1,5 @@
+@import url(./_success/popup__title_success.css);
+
 .popup__title {
   margin: 0;
   font-family: 'Roboto';
