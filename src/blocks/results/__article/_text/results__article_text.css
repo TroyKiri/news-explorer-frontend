@@ -1,8 +1,8 @@
 .results__article_text {
   margin-top: 0;
   margin-bottom: 18px;
-  width: 352px;
-  font-family: Roboto;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;

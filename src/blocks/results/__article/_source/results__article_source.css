@@ -1,5 +1,8 @@
 .results__article_source {
-  margin-bottom: 24px;
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  margin: 0;
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: bold;
