@@ -1,0 +1,11 @@
+.results__article_title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  width: 352px;
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1A1B22;
+}

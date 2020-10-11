@@ -1,0 +1,12 @@
+.results__article_date {
+  margin: 0;
+  margin-bottom: 12px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #B6BCBF;
+}
