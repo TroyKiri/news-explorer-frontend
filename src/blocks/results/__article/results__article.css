@@ -22,3 +22,11 @@
 .results__article:hover {
   cursor: url('../../../images/Pointer.png'), pointer;
 }
+
+@media screen and (min-width: 500px) and (max-width: 1023px) {
+  .results__article {
+    height: 420px;
+    width: calc((100% - 8px * 2) / 3);
+    margin-right: 8px;
+  }
+}

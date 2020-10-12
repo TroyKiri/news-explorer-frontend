@@ -3,3 +3,9 @@
   width: 100%;
   border-radius: 16px 16px 0 0;
 }
+
+@media screen and (min-width: 500px) and (max-width: 1023px) {
+  .results__article_image {
+    height: 150px;
+  }
+}

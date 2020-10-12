@@ -36,10 +36,20 @@
   color: #000000;
 }
 
-.results__article_save:hover .results__article_save-info {
-  display: flex;
-  z-index: 999;
-}
 .results__article_save:hover {
   background-image: url('../../../../images/save-not-auth-hover.png');
+}
+
+@media screen and (min-width: 1024px) {
+  .results__article_save:hover .results__article_save-info {
+    display: flex;
+    z-index: 999;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1023px) {
+  .results__article_save {
+    top: 8px;
+    right: 8px;
+  }
 }
