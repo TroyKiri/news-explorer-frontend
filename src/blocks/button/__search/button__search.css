@@ -12,3 +12,10 @@
   line-height: 24px;
   color: #FFFFFF;
 }
+
+@media screen and (min-width:500px) and (max-width: 1023px) {
+  .button__search {
+    width: 160px;
+    height: 56px;
+  }
+}

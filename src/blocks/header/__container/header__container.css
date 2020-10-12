@@ -2,3 +2,9 @@
   margin-right: 104px;
   display: flex;
 }
+
+@media screen and (min-width: 500px) and (max-width: 1023px) {
+  .header__container {
+    margin-right: 40px;
+  }
+}
