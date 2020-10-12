@@ -8,3 +8,9 @@
   line-height: 24px;
   color: #1A1B22;
 }
+
+@media screen and (min-width: 500px) and (max-width: 1023px) {
+  .about__text {
+    max-width: 424px;
+  }
+}
