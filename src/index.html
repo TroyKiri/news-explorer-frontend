@@ -40,6 +40,11 @@
       <h2 class="results__title">Результаты поиска</h2>
       <div class="results__container">
         <div class="results__article">
+          <div class="results__article_save">
+            <div class="results__article_save-info">
+              <p class="results__article_save-info-text">Войдите, чтобы сохранять статьи</p>
+            </div>
+          </div>
           <img class="results__article_image" alt="image" src="<%=require('./images/image_08.png')%>">
           <div class="results__article_container">
             <p class="results__article_date">2 августа, 2019</p>
@@ -51,6 +56,11 @@
           <p class="results__article_source">Лента.ру</p>
         </div>
         <div class="results__article">
+          <div class="results__article_save">
+            <div class="results__article_save-info">
+              <p class="results__article_save-info-text">Войдите, чтобы сохранять статьи</p>
+            </div>
+          </div>
           <img class="results__article_image" alt="image" src="<%=require('./images/image_04.png')%>">
           <div class="results__article_container">
             <p class="results__article_date">2 августа, 2019</p>
@@ -61,18 +71,32 @@
           <p class="results__article_source">Медуза</p>
         </div>
         <div class="results__article">
+          <div class="results__article_save results__article_save-auth">
+            <div class="results__article_save-info">
+              <p class="results__article_save-info-text">Войдите, чтобы сохранять статьи</p>
+            </div>
+          </div>
           <img class="results__article_image" alt="image" src="<%=require('./images/image_07.png')%>">
           <div class="results__article_container">
             <p class="results__article_date">2 августа, 2019</p>
             <h2 class="results__article_title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h2>
             <p class="results__article_text">Знаменитый фотограф снимает первозданные леса России,
               чтобы рассказать о необходимости их сохранения. В этот раз он отправился в
-              Двинско-Пинежскую тайгу, где...</p>
+              Двинско-Пинежскую тайгу, где qweeeewe</p>
           </div>
           <p class="results__article_source">Риа</p>
         </div>
       </div>
       <button class="button results__button">Показать еще</button>
+    </section>
+    <section class="loading">
+      <i class="loading__circle-preloader"></i>
+      <p class="loading__text">Идет поиск новостей...</p>
+    </section>
+    <section class="failed">
+      <img class="failed__image" alt="failed" src="<%=require('./images/not-found_v1.png')%>">
+      <h2 class="failed__title">Ничего не найдено</h2>
+      <p class="failed__text">К сожалению по вашему запросу<br />ничего не найдено.</p>
     </section>
     <section class="about">
       <img class="about__photo" src="<%=require('./images/image-03.png')%>" alt="my photo">

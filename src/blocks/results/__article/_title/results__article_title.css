@@ -8,4 +8,9 @@
   font-size: 26px;
   line-height: 30px;
   color: #1A1B22;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }

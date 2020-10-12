@@ -4,6 +4,7 @@
 @import url(./_title/results__article_title.css);
 @import url(./_text/results__article_text.css);
 @import url(./_source/results__article_source.css);
+@import url(./_save/results__article_save.css);
 
 .results__article {
   border-radius: 16px;
@@ -16,4 +17,8 @@
 
 .results__article:last-child {
   margin-right: 0;
+}
+
+.results__article:hover {
+  cursor: url('../../../images/Pointer.png'), pointer;
 }

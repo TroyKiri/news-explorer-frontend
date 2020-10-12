@@ -8,6 +8,8 @@
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/popup/popup.css);
 @import url(./blocks/results/results.css);
+@import url(./blocks/loading/loading.css);
+@import url(./blocks/failed/failed.css);
 
 .body {
   margin: 0 auto;
