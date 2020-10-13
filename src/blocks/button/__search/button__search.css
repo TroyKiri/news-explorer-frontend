@@ -13,6 +13,14 @@
   color: #FFFFFF;
 }
 
+.button__search:hover {
+  background-color: #347EFF;
+  transition: color 1s linear;
+}
+.button__search:active {
+  background-color: #2A65CC;
+}
+
 @media screen and (min-width:658px) and (max-width: 1023px) {
   .button__search {
     width: 160px;

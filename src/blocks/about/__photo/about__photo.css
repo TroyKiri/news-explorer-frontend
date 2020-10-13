@@ -11,3 +11,10 @@
     height: 232px;
   }
 }
+@media screen and (min-width: 320px) and (max-width: 657px) {
+  .about__photo {
+    margin: 32px auto 24px;
+    width: 272px;
+    height: 272px;
+  }
+}

@@ -9,3 +9,6 @@
 .button:hover {
   cursor: url('../../images/Pointer.png'), pointer;
 }
+.button:active, .button:focus {
+  outline: none;
+}
