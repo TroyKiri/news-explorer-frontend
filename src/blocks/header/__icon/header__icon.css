@@ -1,0 +1,16 @@
+.header__icon {
+  width: 24px;
+  height: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-right: 16px;
+}
+.header__menu:hover {
+  cursor: url('../../../images/Pointer.png'), pointer;
+}
+
+@media screen and (min-width: 657px) {
+  .header__icon {
+    display: none;
+  }
+}

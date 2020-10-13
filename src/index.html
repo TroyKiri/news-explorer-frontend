@@ -12,11 +12,32 @@
   <div class="body">
     <div class="background">
 
+      <section class="menu">
+        <div class="menu__content">
+          <div class="menu__container">
+            <h3 class="header__title">NewsExplorer</h3>
+            <img class="header__icon" alt="menu" src="<%=require('./images/back.png')%>">
+          </div>
+          <div class="header__container_menu">
+            <ul class="header__links">
+              <li class="header__ref"><a class="header__link header__link_active" href="index.html">Главная</a></li>
+              <!-- <li class="header__ref"><a class="header__link" href="#">Сохранённые статьи</a></li> -->
+            </ul>
+            <button class="button button__header button__header_not-login">Авторизоваться</button>
+            <!-- <button class="button button__header button__header_login">
+              <p class="button__header_text">Грета</p>
+              <img class="button__header_logout" src="<%=require('./images/logout.png')%>" alt="logout">
+            </button> -->
+          </div>
+        </div>
+      </section>
+
       <header class="header">
         <h3 class="header__title">NewsExplorer</h3>
+        <img class="header__icon" alt="menu" src="<%=require('./images/menu.png')%>">
         <div class="header__container">
           <ul class="header__links">
-            <li class="header__ref"><a class="header__link header__link_active" href="#">Главная</a></li>
+            <li class="header__ref"><a class="header__link header__link_active" href="index.html">Главная</a></li>
             <!-- <li class="header__ref"><a class="header__link" href="#">Сохранённые статьи</a></li> -->
           </ul>
           <button class="button button__header button__header_not-login">Авторизоваться</button>
@@ -40,7 +61,7 @@
 
     </div>
 
-    <section class="results">
+    <!-- <section class="results">
       <h2 class="results__title">Результаты поиска</h2>
       <div class="results__container">
         <div class="results__article">
@@ -128,7 +149,7 @@
           <li class="footer__icon"><a class="footer__icon-link" href="https://www.facebook.com/" target="_blank"><img class="footer__icon-image" alt="facebook" src="<%=require('./images/fb.png')%>"></a></li>
         </ul>
       </div>
-    </footer>
+    </footer> -->
     <!-- <div class="popup" id='popup-login'>
       <div class="popup__content popup__login">
         <img src="<%=require('./images/back.png')%>" alt="close" class="popup__close">

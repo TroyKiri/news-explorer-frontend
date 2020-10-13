@@ -6,7 +6,7 @@
   max-height: 576px;
 }
 
-@media screen and (min-width:500px) and (max-width: 1023px) {
+@media screen and (min-width:658px) and (max-width: 1023px) {
   .background {
     max-height: 400px;
   }

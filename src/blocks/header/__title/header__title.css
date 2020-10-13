@@ -17,3 +17,13 @@
     margin-bottom: 18.47px;
   }
 }
+
+@media screen and (min-width: 320px) and (max-width: 657px) {
+  .header__title {
+    margin-left: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

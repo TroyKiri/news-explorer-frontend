@@ -13,3 +13,8 @@
     height: 334px;
   }
 }
+@media screen and (min-width:320px) and (max-width: 657px) {
+  .search {
+    height: 480px;
+  }
+}

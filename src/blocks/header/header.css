@@ -2,6 +2,7 @@
 @import url(./__container/header__container.css);
 @import url(./__ref/header__ref.css);
 @import url(./__links/header__links.css);
+@import url(./__icon/header__icon.css);
 
 .header {
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
