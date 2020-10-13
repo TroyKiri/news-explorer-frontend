@@ -2,6 +2,7 @@
 @import url(./_auth/button__header_login.css);
 @import url(./_text/button__header_text.css);
 @import url(./_logout/button__header_logout.css);
+@import url(./_menu/button__header_menu.css);
 
 .button__header {
   margin-top: 19px;

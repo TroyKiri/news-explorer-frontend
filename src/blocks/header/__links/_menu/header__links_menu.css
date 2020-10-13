@@ -1,0 +1,9 @@
+.header__links_menu {
+  width: 288px;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 16px auto 22px;
+}
