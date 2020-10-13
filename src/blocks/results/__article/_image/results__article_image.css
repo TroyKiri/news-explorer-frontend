@@ -4,8 +4,14 @@
   border-radius: 16px 16px 0 0;
 }
 
-@media screen and (min-width: 500px) and (max-width: 1023px) {
+@media screen and (min-width: 658px) and (max-width: 1023px) {
   .results__article_image {
     height: 150px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 657px) {
+  .results__article_image {
+    height: 196px;
   }
 }

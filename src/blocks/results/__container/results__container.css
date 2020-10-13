@@ -1,3 +1,9 @@
 .results__container {
   display: flex;
 }
+
+@media screen and (min-width: 320px) and (max-width: 657px) {
+  .results__container {
+    flex-wrap: wrap;
+  }
+}

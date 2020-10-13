@@ -10,3 +10,9 @@
   align-items: center;
   color: #B6BCBF;
 }
+
+@media screen and (min-width: 320px) and (max-width: 657px) {
+  .results__article_date {
+    margin-bottom: 10px;
+  }
+}

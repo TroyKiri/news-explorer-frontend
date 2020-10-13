@@ -15,10 +15,19 @@
   -webkit-box-orient: vertical;
 }
 
-@media screen and (min-width: 500px) and (max-width: 1023px) {
+@media screen and (min-width: 658px) and (max-width: 1023px) {
   .results__article_title {
     margin-bottom: 10px;
     font-size: 22px;
     line-height: 24px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 657px) {
+  .results__article_title {
+    margin-bottom: 10px;
+    font-size: 22px;
+    line-height: 26px;
+    -webkit-line-clamp: 2;
   }
 }
