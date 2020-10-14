@@ -5,3 +5,12 @@
   right: -46px;
   cursor: url('../../../images/Pointer.png'), pointer;
 }
+
+@media screen and (min-width: 320px) and (max-width: 657px) {
+  .popup__close {
+    top: -40px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+  }
+}
