@@ -1,11 +1,13 @@
+@import url(./_main/header__title_main.css);
+@import url(./_articles/header__title_article.css);
+
 .header__title {
   margin-left: 104px;
   margin-top: 30px;
   margin-bottom: 26px;
-  color: #FFFFFF;
   font-family: 'Roboto Slab', sans-serif;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 20px;
   line-height: 24px;
 }

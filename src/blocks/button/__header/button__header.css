@@ -3,11 +3,12 @@
 @import url(./_text/button__header_text.css);
 @import url(./_logout/button__header_logout.css);
 @import url(./_menu/button__header_menu.css);
+@import url(./_articles/button__header_articles.css);
+@import url(./_main/button__header_main.css);
 
 .button__header {
   margin-top: 19px;
   margin-left: 32px;
-  border: 1px solid #FFFFFF;
   background: transparent;
   height: 48px;
   font-family: 'Roboto';
@@ -15,7 +16,6 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  color: #FFFFFF;
 }
 
 @media screen and (min-width: 500px) and (max-width: 1023px) {

@@ -1,4 +1,5 @@
 .button__header_login {
   display: flex;
   align-items: center;
+  justify-content: center;
 }

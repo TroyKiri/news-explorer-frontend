@@ -13,9 +13,13 @@
   width: calc((100% - 16px * 2) / 3);
   margin-right: 16px;
   position: relative;
+  z-index: 2;
 }
 
 .results__article:last-child {
+  margin-right: 0;
+}
+.results__article:nth-child(3n) {
   margin-right: 0;
 }
 

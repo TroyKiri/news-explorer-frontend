@@ -1,5 +1,6 @@
 @import url(./__link/header__link.css);
-@import url(./__link/_active/header__link_active.css);
+@import url(./__link/_active-main/header__link_active-main.css);
+@import url(./__link/_active-articles/header__link_active-articles.css);
 @import url(./_menu/header__links_menu.css);
 
 .header__links {

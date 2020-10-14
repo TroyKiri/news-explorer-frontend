@@ -1,4 +1,6 @@
 @import url(./_menu/header__link_menu.css);
+@import url(./_main/header__link_main.css);
+@import url(./_articles/header__link_articles.css);
 
 .header__link {
   margin-right: 0;
@@ -10,7 +12,6 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  color: #B6BCBF;
 }
 
 .header__link:hover {
