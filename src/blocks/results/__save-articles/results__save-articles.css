@@ -16,8 +16,8 @@
   }
 }
 @media screen and (min-width: 320px) and (max-width: 657px) {
-  .results_articles {
-    padding: 16px;
+  .results__save-articles {
+    margin-bottom: 16px;
     font-size: 12px;
   }
 }

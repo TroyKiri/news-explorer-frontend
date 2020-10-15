@@ -25,7 +25,7 @@
             </ul>
             <button class="button button__header_menu">Авторизоваться</button>
             <!-- <button class="button button__header_menu button__header_login">
-              <p class="button__header_text">Грета</p>
+              <span class="button__header_text">Грета</span>
               <img class="button__header_logout" src="<%=require('./images/logout.png')%>" alt="logout">
             </button> -->
           </div>
@@ -42,7 +42,7 @@
           </ul>
           <!-- <button class="button button__header button__header_not-login">Авторизоваться</button> -->
           <button class="button button__header button__header_login button__header_main">
-            <p class="button__header_text">Грета</p>
+            <span class="button__header_text">Грета</span>
             <img class="button__header_logout" src="<%=require('./images/logout.png')%>" alt="logout">
           </button>
         </div>
@@ -71,15 +71,15 @@
               <p class="article__message article__message_save">Войдите, чтобы сохранять статьи</p>
             </div>
           </div>
-          <img class="results__article_image" alt="image" src="<%=require('./images/image_08.png')%>">
-          <div class="results__article_container">
-            <p class="results__article_date">2 августа, 2019</p>
-            <h2 class="results__article_title">Национальное достояние – парки</h2>
-            <p class="results__article_text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+          <img class="article__image" alt="image" src="<%=require('./images/image_08.png')%>">
+          <div class="article__container">
+            <p class="article__date">2 августа, 2019</p>
+            <h2 class="article__title">Национальное достояние – парки</h2>
+            <p class="article__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
               начала складываться система национальных парков – охраняемых территорий,
               где и сегодня каждый может приобщиться к природе.</p>
           </div>
-          <p class="results__article_source">Лента.ру</p>
+          <p class="article__source">Лента.ру</p>
         </div>
 
         <div class="article">
@@ -88,30 +88,30 @@
               <p class="article__message article__message_save">Войдите, чтобы сохранять статьи</p>
             </div>
           </div>
-          <img class="results__article_image" alt="image" src="<%=require('./images/image_04.png')%>">
-          <div class="results__article_container">
-            <p class="results__article_date">2 августа, 2019</p>
-            <h2 class="results__article_title">Лесные огоньки: история одной фотографии</h2>
-            <p class="results__article_text">Фотограф отвлеклась от освещения суровой политической
+          <img class="article__image" alt="image" src="<%=require('./images/image_04.png')%>">
+          <div class="article__container">
+            <p class="article__date">2 августа, 2019</p>
+            <h2 class="article__title">Лесные огоньки: история одной фотографии</h2>
+            <p class="article__text">Фотограф отвлеклась от освещения суровой политической
               реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
           </div>
-          <p class="results__article_source">Медуза</p>
+          <p class="article__source">Медуза</p>
         </div>
         <div class="article">
           <div class="article__info article__info_main">
-            <div class="article__icon article__icon_save article__icon_save-auth">
+            <div class="article__icon article__icon_save-auth">
               <p class="article__message article__message_save">Войдите, чтобы сохранять статьи</p>
             </div>
           </div>
-          <img class="results__article_image" alt="image" src="<%=require('./images/image_07.png')%>">
-          <div class="results__article_container">
-            <p class="results__article_date">2 августа, 2019</p>
-            <h2 class="results__article_title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h2>
-            <p class="results__article_text">Знаменитый фотограф снимает первозданные леса России,
+          <img class="article__image" alt="image" src="<%=require('./images/image_07.png')%>">
+          <div class="article__container">
+            <p class="article__date">2 августа, 2019</p>
+            <h2 class="article__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h2>
+            <p class="article__text">Знаменитый фотограф снимает первозданные леса России,
               чтобы рассказать о необходимости их сохранения. В этот раз он отправился в
               Двинско-Пинежскую тайгу, где qweeeewe</p>
           </div>
-          <p class="results__article_source">Риа</p>
+          <p class="article__source">Риа</p>
         </div>
       </div>
       <button class="button results__button">Показать еще</button>
@@ -164,7 +164,7 @@
             <h3 class="popup__input-name">Пароль</h3>
             <input type="password" name="password" class="popup__input popup__input_type_password popup__input_valid" placeholder="Введите пароль" required>
             <p class="popup__error-message popup__error-messagge_valid-input">Неправильный пароль</p>
-            <button id="submit" type = 'submit' class="button popup__button popup__button_not-active popup__button_login">Войти</button>
+            <button id="submit-login" type = 'submit' class="button popup__button popup__button_not-active popup__button_login">Войти</button>
             <p class="popup__alt">или <a class="popup__link" href="#">Зарегистрироваться</a></p>
         </form>
       </div>
@@ -183,7 +183,7 @@
             <h3 class="popup__input-name">Имя</h3>
             <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Введите своё имя" required>
             <p class="popup__error-message popup__error-message_user">Такой пользователь уже есть</p>
-            <button id="submit" type = 'submit' class="button popup__button popup__button_not-active popup__button_signup">Зарегистрироваться</button>
+            <button id="submit-signup" type = 'submit' class="button popup__button popup__button_not-active popup__button_signup">Зарегистрироваться</button>
             <p class="popup__alt">или <a class="popup__link" href="#">Войти</a></p>
         </form>
       </div>
