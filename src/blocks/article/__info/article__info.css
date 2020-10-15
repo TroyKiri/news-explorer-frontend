@@ -1,5 +1,7 @@
+@import url(./_main/article__info_main.css);
+@import url(./_articles/article__info_articles.css);
+
 .article__info {
-  border: 1px solid red;
   position: absolute;
   top: 24px;
   left: 24px;

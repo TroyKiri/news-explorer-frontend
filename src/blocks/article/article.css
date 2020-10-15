@@ -1,4 +1,7 @@
 @import url(./__info/article__info.css);
+@import url(./__keyword/article__keyword.css);
+@import url(./__icon/article__icon.css);
+@import url(./__message/article__message.css);
 
 .article {
   z-index: 2;

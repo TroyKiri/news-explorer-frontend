@@ -1,0 +1,7 @@
+.article__icon_save {
+  background-image: url('../../../../images/save-not-auth.png');
+}
+
+.article__icon_save:hover {
+  background-image: url('../../../../images/save-not-auth-hover.png');
+}
