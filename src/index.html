@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Kirill Troitsky">
+  <meta name="description" content="news search service">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NewsExplorer</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
@@ -160,11 +162,11 @@
         <form class="popup__form popup__form_login" name="login">
             <h3 class="popup__input-name">Email</h3>
             <input type="email" name="email" class="popup__input popup__input_type_email popup__input_invalid" placeholder="Введите почту" minlength="2" maxlength="30" required>
-            <p class="popup__error-message popup__error-messagge_invalid-input">Неправильный формат email</p>
+            <p class="popup__error-message popup__error-messagge_valid-input">Неправильный формат email</p>
             <h3 class="popup__input-name">Пароль</h3>
             <input type="password" name="password" class="popup__input popup__input_type_password popup__input_valid" placeholder="Введите пароль" required>
             <p class="popup__error-message popup__error-messagge_valid-input">Неправильный пароль</p>
-            <button id="submit-login" type = 'submit' class="button popup__button popup__button_not-active popup__button_login">Войти</button>
+            <button id="submit" type = 'submit' class="button popup__button popup__button_not-active popup__button_login">Войти</button>
             <p class="popup__alt">или <a class="popup__link" id="popup-link-signup" href="#">Зарегистрироваться</a></p>
         </form>
       </div>
@@ -176,14 +178,14 @@
         <form class="popup__form popup__form_signup" name="signup">
             <h3 class="popup__input-name">Email</h3>
             <input type="email" name="email" class="popup__input popup__input_type_email popup__input_invalid" placeholder="Введите почту" minlength="2" maxlength="30" required>
-            <p class="popup__error-message popup__error-messagge_invalid-input">Неправильный формат email</p>
+            <p class="popup__error-message popup__error-messagge_valid-input">Неправильный формат email</p>
             <h3 class="popup__input-name">Пароль</h3>
             <input type="password" name="password" class="popup__input popup__input_type_password popup__input_invalid" placeholder="Введите пароль" required>
-            <p class="popup__error-message popup__error-messagge_invalid-input">Неправильный пароль</p>
+            <p class="popup__error-message popup__error-messagge_valid-input">Неправильный пароль</p>
             <h3 class="popup__input-name">Имя</h3>
             <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Введите своё имя" required>
-            <p class="popup__error-message popup__error-message_user">Такой пользователь уже есть</p>
-            <button id="submit-signup" type = 'submit' class="button popup__button popup__button_not-active popup__button_signup">Зарегистрироваться</button>
+            <!-- <p class="popup__error-message popup__error-message_user">Такой пользователь уже есть</p> -->
+            <button id="submit" type = 'submit' class="button popup__button popup__button_not-active popup__button_signup">Зарегистрироваться</button>
             <p class="popup__alt">или <a class="popup__link " id="popup-link-login" href="#">Войти</a></p>
         </form>
       </div>
