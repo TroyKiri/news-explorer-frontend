@@ -9,7 +9,8 @@
     "no-console":"off",
     "func-names":"off",
     "import/prefer-default-export": "off",
-    "class-methods-use-this":"off"
+    "class-methods-use-this":"off",
+    "no-param-reassign":"off"
   },
   "env": {
     "browser": true

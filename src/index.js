@@ -1,7 +1,11 @@
 import './style.css';
 
+import { mainConfig } from './js/constants/config';
+
 import { Header } from './js/components/Header';
 import { Popup } from './js/components/Popup';
+import { Form } from './js/components/Form';
+import { MainApi } from './js/api/MainApi';
 
 const elHeader = document.querySelector('.header');
 // Всплывающее меню шапки сайта для мобильной версии
@@ -32,8 +36,10 @@ const buttonSignUp = elPopupSignUp.querySelector('#submit-signup');
 // Экземпляр класса Header
 const header = new Header(elMenu);
 // Экземпляры попапов
-const popupLogin = new Popup(elPopupLogin, formLogin);
-const popupSignUp = new Popup(elPopupSignUp, formSignUp);
+const popupLogin = new Popup(elPopupLogin, formLogin, menuButtonOpen);
+const popupSignUp = new Popup(elPopupSignUp, formSignUp, menuButtonOpen);
+// MainApi
+const mainApi = new MainApi(mainConfig);
 
 // Открытие и закрытие меню
 menuButtonOpen.addEventListener('click', header.openMenu.bind(header));
@@ -49,8 +55,11 @@ linkSuccessLogin.addEventListener('click', popupLogin.open.bind(popupLogin));
 // Попап регистрации
 linkSignUp.addEventListener('click', popupSignUp.open.bind(popupSignUp));
 
+// Валидация
+new Form(formLogin).setEventListeners();
+new Form(formSignUp).setEventListeners();
 
-
+// Регистрация
 
 
 // const resultsContainer = document.querySelector('.results__container');
