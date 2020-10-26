@@ -6,6 +6,7 @@ import { Header } from './js/components/Header';
 import { Popup } from './js/components/Popup';
 import { Form } from './js/components/Form';
 import { MainApi } from './js/api/MainApi';
+import { Auth } from './js/utils/Auth';
 
 const elHeader = document.querySelector('.header');
 // Всплывающее меню шапки сайта для мобильной версии
@@ -32,6 +33,9 @@ const linkSuccessLogin = popupSuccess.querySelector('#popup-success-link-login')
 const linkSignUp = elPopupLogin.querySelector('#popup-link-signup');
 const buttonSignUp = elPopupSignUp.querySelector('#submit-signup');
 
+// Массив статей
+let savedArticles = [];
+
 // ЭКЗЕМПЛЯРЫ КЛАССОВ
 // Экземпляр класса Header
 const header = new Header(elMenu);
@@ -40,6 +44,8 @@ const popupLogin = new Popup(elPopupLogin, formLogin, menuButtonOpen);
 const popupSignUp = new Popup(elPopupSignUp, formSignUp, menuButtonOpen);
 // MainApi
 const mainApi = new MainApi(mainConfig);
+//
+const auth = new Auth();
 
 // Открытие и закрытие меню
 menuButtonOpen.addEventListener('click', header.openMenu.bind(header));
@@ -59,8 +65,38 @@ linkSignUp.addEventListener('click', popupSignUp.open.bind(popupSignUp));
 new Form(formLogin).setEventListeners();
 new Form(formSignUp).setEventListeners();
 
-// Регистрация
+// Отрисовка шапки сайта, если пользователь авторизован
 
+// Функция отрисовки шапки сайта
+function headerRender(res) {
+  const isLoggedIn = true;
+  const userName = res.data.name;
+  const token = auth.getToken();
+
+  mainApi.getArticles(token)
+    .then((result) => {
+      savedArticles = result.data;
+      // const disabledLink = savedArticles ? true : false;
+      header.render(isLoggedIn, userName);
+    })
+    .catch((err) => console.log(err));
+}
+// Функция отрисовки страницы
+function handlerLoadingPage(token) {
+  if (token) {
+    mainApi.getUserData(token)
+      .then((res) => headerRender(res))
+      .catch((err) => console.log(err));
+  }
+}
+
+const token = auth.getToken(); // получаем токен
+
+if (token) {
+  handlerLoadingPage(token); // отрисовываем страницу, если пользователь авторизован
+}
+
+// Регистрация
 
 // const resultsContainer = document.querySelector('.results__container');
 // const articles = resultsContainer.querySelectorAll('.article');
