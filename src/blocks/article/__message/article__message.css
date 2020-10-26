@@ -1,5 +1,7 @@
 @import url(./_delete/article__message_delete.css);
 @import url(./_save/article__message_save.css);
+@import url(./_not-visible/article__message_not-visible.css);
+
 
 .article__message {
   position: absolute;

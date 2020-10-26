@@ -11,20 +11,22 @@
 @import url(./__login/popup__login.css);
 @import url(./__signup/popup__signup.css);
 @import url(./__success/popup__success.css);
+@import url(./_is-opened/popup_is-opened.css);
 
 .popup {
+  z-index: 3;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, .5);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
 
-#popup-login {
+/* #popup-login {
   display: none;
 }
 #popup-success {
@@ -32,7 +34,7 @@
 }
 #popup-signup {
   display: none;
-}
+} */
 
 @media screen and (min-width: 320px) and (max-width: 657px) {
   .popup {

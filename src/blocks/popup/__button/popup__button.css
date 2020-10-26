@@ -1,6 +1,7 @@
 @import url(./_active/popup__button_active.css);
 @import url(./_not-active/popup__button_not-active.css);
-@import url(./_signup/popup__button_signup.css);
+@import url(./_signup-valid/popup__button_signup-valid.css);
+@import url(./_signup-invalid/popup__button_signup-invalid.css);
 @import url(./_login/popup__button_login.css);
 /*@import url(./_save/popup__button_save.css);*/
 
