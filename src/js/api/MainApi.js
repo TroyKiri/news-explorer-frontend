@@ -9,7 +9,7 @@ export class MainApi {
     const errorNotConnect = 'Во время запроса произошла ошибка';
     return fetch(`${this.config.baseUrl}/signup`, {
       method: 'POST',
-      mode: 'no-cors',
+      // mode: 'no-cors',
       credentials: 'include',
       headers: this.config.headers,
       body: JSON.stringify({
