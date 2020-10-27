@@ -22,17 +22,17 @@ const formLogin = document.querySelector('.popup__form_login');
 const elPopupSignUp = document.querySelector('#popup-signup');
 const formSignUp = document.querySelector('.popup__form_signup');
 // Успешная регистрация
-const popupSuccess = document.querySelector('#popup-success');
+const elPopupSuccess = document.querySelector('#popup-success');
 
 // КНОПКИ и ССЫЛКИ
 // Кнопки для входа (login)
 const buttonHeaderMenu = document.querySelector('.button__header_menu');
 const buttonHeaderMain = document.querySelector('#button-header-auth');
 const linkLogin = elPopupSignUp.querySelector('#popup-link-login');
-const linkSuccessLogin = popupSuccess.querySelector('#popup-success-link-login');
+const linkSuccessLogin = elPopupSuccess.querySelector('#popup-success-link-login');
 // Кнопки для регистрации (sign up)
 const linkSignUp = elPopupLogin.querySelector('#popup-link-signup');
-const buttonSignUp = elPopupSignUp.querySelector('#submit-signup');
+const buttonSignUp = elPopupSignUp.querySelector('.popup__button_signup');
 // Кнопка выхода
 const signOutButton = elHeader.querySelector('#button-header-signout');
 
@@ -41,18 +41,17 @@ let savedArticles = [];
 
 // ЭКЗЕМПЛЯРЫ КЛАССОВ
 // Экземпляр класса Header
-const header = new Header({
-  elMenu,
-  buttonHeaderMain,
-  signOutButton,
-  elHeaderContainer,
-});
+const header = new Header(elMenu, buttonHeaderMain, signOutButton, elHeaderContainer);
 // Экземпляры попапов
 const popupLogin = new Popup(elPopupLogin, formLogin, menuButtonOpen);
 const popupSignUp = new Popup(elPopupSignUp, formSignUp, menuButtonOpen);
+const popupSuccess = new Popup(elPopupSuccess);
+// Экземпляры форм
+const formRegistration = new Form(formSignUp);
+const formEntry = new Form(formLogin);
 // MainApi
 const mainApi = new MainApi(mainConfig);
-//
+// Класс для работы с токеном
 const auth = new Auth();
 
 // ПОПАПЫ
@@ -66,8 +65,8 @@ linkSuccessLogin.addEventListener('click', popupLogin.open.bind(popupLogin));
 linkSignUp.addEventListener('click', popupSignUp.open.bind(popupSignUp));
 
 // Валидация
-new Form(formLogin).setEventListeners();
-new Form(formSignUp).setEventListeners();
+formEntry.setEventListeners();
+formRegistration.setEventListeners();
 
 // Отрисовка шапки сайта, если пользователь авторизован
 
@@ -116,6 +115,22 @@ const showArticleMessageAuth = (event) => {
 saveIconArticle.addEventListener('mouseover', showArticleMessageAuth);
 
 // Регистрация
+function signUp(event) {
+  event.preventDefault();
+
+  const formData = formRegistration.getInfo();
+  console.log(formData);
+  mainApi.signup(formData)
+    .then((res) => {
+      if (!res.message) {
+        return popupSuccess.open();
+      }
+      return Promise.reject(res.message);
+    })
+    .catch((err) => console.log(err));
+}
+
+buttonSignUp.addEventListener('click', signUp);
 
 // const resultsContainer = document.querySelector('.results__container');
 // const articles = resultsContainer.querySelectorAll('.article');

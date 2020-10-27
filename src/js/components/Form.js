@@ -87,7 +87,12 @@ export class Form {
 
   }
 
-  _getInfo() {
-
+  getInfo() {
+    const elementss = Array.from(this.form.elements);
+    const elements = elementss.filter((elem) => !(elem.id === 'submit'));
+    const obj = elements.reduce(function (arr, { name, value }) {
+      return { ...arr, [name]: value };
+    }, {});
+    return obj;
   }
 }

@@ -6,7 +6,19 @@ export class Popup {
   }
 
   open() {
-    if (this.container.id === 'popup-login' || this.container.id === 'popup-signup') {
+    if (this.container.id === 'popup-signup') {
+      this.container.classList.add('popup_is-opened');
+      this.container.querySelector('.popup__close').addEventListener('click', this.close.bind(this));
+      this.container.querySelector('.popup__link').addEventListener('click', this.close.bind(this));
+      this.container.querySelector('.popup__button_signup').addEventListener('click', this.close.bind(this));
+      this.buttonMenu.style.opacity = 0;
+      this.form.elements.submit.disabled = true;
+      this.form.elements.submit.classList.remove('popup__button_active');
+    } else if (this.container.id === 'popup-success') {
+      this.container.classList.add('popup_is-opened');
+      this.container.querySelector('.popup__close').addEventListener('click', this.close.bind(this));
+      this.container.querySelector('.popup__link').addEventListener('click', this.close.bind(this));
+    } else if (this.container.id === 'popup-login') {
       this.container.classList.add('popup_is-opened');
       this.container.querySelector('.popup__close').addEventListener('click', this.close.bind(this));
       this.container.querySelector('.popup__link').addEventListener('click', this.close.bind(this));

@@ -1,16 +1,8 @@
 import { BaseComponent } from './BaseComponent';
 
 export class Header extends BaseComponent {
-  constructor(props) {
+  constructor(menu, buttonHeaderMain, signOutButton, linkContainer) {
     super();
-
-    const {
-      menu,
-      buttonHeaderMain,
-      signOutButton,
-      linkContainer,
-    } = props;
-
     this.menu = menu;
     this.buttonHeaderMain = buttonHeaderMain;
     this.signOutButton = signOutButton;
