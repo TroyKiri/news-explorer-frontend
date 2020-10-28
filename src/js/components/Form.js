@@ -1,10 +1,35 @@
-export class Form {
+import { BaseComponent } from './BaseComponent';
+
+export class Form extends BaseComponent {
   constructor(form) {
+    super();
     this.form = form;
   }
 
-  setServer() {
+  setServer(err) {
+    this._showError(err);
+  }
 
+  // setServerError(err) {
+  //   const errorElement = this._generateError(err);
+
+  //   this
+  //     ._submitButton
+  //     .parentElement
+  //     .insertBefore(
+  //       errorElement,
+  //       this._submitButton
+  //     )
+
+  //   this.formEnabled();
+  //   this._submitButtonDisabled(this._submitButton);
+  // }
+
+  _showError(text) {
+    const error = this._findElement(this.form, '.popup__error-message_user');
+    error.style.display = 'block';
+    error.innerHTML = text;
+    return error;
   }
 
   _validateInputElement(input, error, button) {

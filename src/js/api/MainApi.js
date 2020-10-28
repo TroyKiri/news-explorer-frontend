@@ -9,17 +9,15 @@ export class MainApi {
     const errorNotConnect = 'Во время запроса произошла ошибка';
     return fetch(`${this.config.baseUrl}/signup`, {
       method: 'POST',
-      // mode: 'no-cors',
       credentials: 'include',
       headers: this.config.headers,
       body: JSON.stringify({
-        email: email.value,
-        password: password.value,
-        name: name.value,
+        email,
+        password,
+        name,
       }),
     })
       .then((res) => res.json())
-      // .then((data) => console.log(data))
       .catch((err) => {
         if (err.message === 'Failed to fetch') {
           return new Error(errorNotConnect);
