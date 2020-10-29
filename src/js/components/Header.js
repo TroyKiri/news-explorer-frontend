@@ -18,11 +18,11 @@ export class Header extends BaseComponent {
       // Отрисовка имени пользователя
       this._setUserName(signOutButtonText, userName);
       // Скрываем кнопку Авторизация
-      this.buttonHeaderMain.classList.remove('.button__is-visible');
-      this.buttonHeaderMain.classList.add('.button__not-visible');
+      this.buttonHeaderMain.classList.remove('button__is-visible');
+      this.buttonHeaderMain.classList.add('button__not-visible');
       // Отрисовываем кнопку выхода
-      this.signOutButton.remove('.button__not-visible');
-      this.signOutButton.add('.button__is-visible');
+      this.signOutButton.classList.remove('button__not-visible');
+      this.signOutButton.classList.add('button__is-visible');
       // Появления ссылки на сохраненные статьи
       savedPagesLinkElement.classList.remove('header__link_not-visible');
       savedPagesLinkElement.classList.add('header__link_is-visible');
@@ -30,11 +30,11 @@ export class Header extends BaseComponent {
       // Удаление имени пользователя
       this._clearUserName(signOutButtonText);
       // Скрываем кнопку выхода
-      this.signOutButton.remove('.button__is-visible');
-      this.signOutButton.add('.button__not-visible');
+      this.signOutButton.remove('button__is-visible');
+      this.signOutButton.add('button__not-visible');
       // Отрисовываем кнопку авторизации
-      this.buttonHeaderMain.classList.remove('.button__not-visible');
-      this.buttonHeaderMain.classList.add('.button__is-visible');
+      this.buttonHeaderMain.classList.remove('button__not-visible');
+      this.buttonHeaderMain.classList.add('button__is-visible');
       // Скрываем ссылку на сохраненные статьи
       savedPagesLinkElement.classList.remove('header__link_is-visible');
       savedPagesLinkElement.classList.add('header__link_not-visible');

@@ -1,5 +1,8 @@
-export class Popup {
+import { BaseComponent } from './BaseComponent';
+
+export class Popup extends BaseComponent {
   constructor(container, form, buttonMenu) {
+    super();
     this.container = container;
     this.form = form;
     this.buttonMenu = buttonMenu;
@@ -14,7 +17,6 @@ export class Popup {
       this.container.classList.add('popup_is-opened');
       this.container.querySelector('.popup__close').addEventListener('click', this.close.bind(this));
       this.container.querySelector('.popup__link').addEventListener('click', this.close.bind(this));
-      this.container.querySelector('.popup__button_signup').addEventListener('click', this.close.bind(this));
       this.buttonMenu.style.opacity = 0;
       this.form.elements.submit.disabled = true;
       this.form.elements.submit.classList.remove('popup__button_active');
@@ -46,6 +48,10 @@ export class Popup {
     popup.classList.remove('popup_is-opened');
   }
 
+  hidePopup() {
+    this.container.remove('popup_is-opened');
+  }
+
   deleteErrors() {
     const elementss = Array.from(this.form.elements);
     const elements = elementss.filter(function (elem) {
@@ -56,5 +62,7 @@ export class Popup {
       errors.style.height = '15px';
       errors.textContent = '';
     });
+    const serverError = this._findElement(this.form, '.popup__error-message_user');
+    serverError.style.display = 'none';
   }
 }

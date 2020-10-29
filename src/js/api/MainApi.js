@@ -39,7 +39,6 @@ export class MainApi {
       }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
       .catch((err) => {
         if (err.message === 'Failed to fetch') {
           return new Error(errorNotConnect);
@@ -51,16 +50,15 @@ export class MainApi {
   // Информация о пользователе
 
   getUserData(token) {
-    this.token = token;
+    // this.token = token;
     const errorNotConnect = 'Во время запроса произошла ошибка';
-    return fetch(`${this.config.baseUrl}/me`, {
+    return fetch(`${this.config.baseUrl}/users/me`, {
       method: 'GET',
       headers: {
-        authorization: this.token,
+        authorization: `Bearer ${token}`,
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
       .catch((err) => {
         if (err.message === 'Failed to fetch') {
           return new Error(errorNotConnect);
@@ -72,16 +70,15 @@ export class MainApi {
   // Получение статей
 
   getArticles(token) {
-    this.token = token;
+    // this.token = token;
     const errorNotConnect = 'Во время запроса произошла ошибка';
     return fetch(`${this.config.baseUrl}/articles`, {
       method: 'GET',
       headers: {
-        authorization: this.token,
+        authorization: `Bearer ${token}`,
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
       .catch((err) => {
         if (err.message === 'Failed to fetch') {
           return new Error(errorNotConnect);

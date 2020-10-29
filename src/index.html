@@ -67,7 +67,7 @@
       <h2 class="results__title results__title_main">Результаты поиска</h2>
       <div class="results__container">
 
-        <div class="article">
+        <!-- <div class="article">
           <div class="article__info article__info_main">
             <div class="article__icon article__icon_save">
               <p class="article__message article__message_save article__message_not-visible">Войдите, чтобы сохранять статьи</p>
@@ -114,19 +114,18 @@
               Двинско-Пинежскую тайгу, где qweeeewe</p>
           </div>
           <p class="article__source">Риа</p>
-        </div>
+        </div> -->
       </div>
       <button class="button results__button">Показать еще</button>
       <section class="loading">
         <i class="loading__circle-preloader"></i>
         <p class="loading__text">Идет поиск новостей...</p>
       </section>
-    </section>
-
-    <section class="failed">
-      <img class="failed__image" alt="failed" src="<%=require('./images/not-found_v1.png')%>">
-      <h2 class="failed__title">Ничего не найдено</h2>
-      <p class="failed__text">К сожалению по вашему запросу<br />ничего не найдено.</p>
+      <section class="failed">
+        <img class="failed__image" alt="failed" src="<%=require('./images/not-found_v1.png')%>">
+        <h2 class="failed__title">Ничего не найдено</h2>
+        <p class="failed__text">К сожалению по вашему запросу<br />ничего не найдено.</p>
+      </section>
     </section>
 
     <section class="about">
@@ -165,8 +164,8 @@
             <h3 class="popup__input-name">Пароль</h3>
             <input type="password" name="password" class="popup__input popup__input_valid" placeholder="Введите пароль" minlength="8" required>
             <p class="popup__error-message popup__error-message_valid-input"></p>
-            <p class="popup__error-message popup__error-message_user">Такой пользователь уже есть</p>
-            <button id="submit" type = 'submit' class="button popup__button popup__button_not-active popup__button_signup-valid">Войти</button>
+            <p class="popup__error-message popup__error-message_user"></p>
+            <button id="submit" type = 'submit' class="button popup__button popup__button_not-active popup__button_signup-valid popup__button_signin">Войти</button>
             <p class="popup__alt">или <a class="popup__link" id="popup-link-signup">Зарегистрироваться</a></p>
         </form>
       </div>
@@ -185,7 +184,7 @@
             <h3 class="popup__input-name">Имя</h3>
             <input type="text" name="name" class="popup__input" placeholder="Введите своё имя" minlength="2" maxlength="30" required>
             <p class="popup__error-message popup__error-message_valid-input"></p>
-            <p class="popup__error-message popup__error-message_user">Такой пользователь уже есть</p>
+            <p class="popup__error-message popup__error-message_user"></p>
             <button id="submit" type = 'submit' class="button popup__button popup__button_not-active popup__button_signup-valid popup__button_signup-valid popup__button_signup">Зарегистрироваться</button>
             <p class="popup__alt">или <a class="popup__link " id="popup-link-login" href="#">Войти</a></p>
         </form>
