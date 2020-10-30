@@ -212,21 +212,36 @@ const showArticleMessageAuth = (event) => {
 };
 
 // Поиск статей
-function addCard(article, event) {
+function addCard(article, newsCard, event) {
   // console.log(article);
   const icon = event.target.closest('.article__icon');
   const token = auth.getToken();
-  if (icon.classList.contains('article__icon_save')) {
-    icon.classList.remove('article__icon_save');
-    icon.classList.add('article__icon_save-auth');
-    mainApi.createArticle(article, token);
-  } else if (icon.classList.contains('article__icon_save-auth')) {
-    icon.classList.remove('article__icon_save-auth');
-    icon.classList.add('article__icon_save');
+  if (token) {
+    if (icon.classList.contains('article__icon_save')) {
+      icon.classList.remove('article__icon_save');
+      icon.classList.add('article__icon_save-auth');
+      const articleAdded = event.target.closest('.article');
+      mainApi.createArticle(article, token)
+        .then((res) => {
+          articleAdded.id = res.article._id;
+        })
+        .catch((err) => console.log(err));
+      console.log(articleAdded);
+    } else if (icon.classList.contains('article__icon_save-auth')) {
+      icon.classList.remove('article__icon_save-auth');
+      icon.classList.add('article__icon_save');
+      const articleAdded = event.target.closest('.article');
+      console.log(articleAdded);
+      mainApi.removeArticle(articleAdded.id, token)
+        .catch((err) => console.log(err));
+    }
   }
+
 
   // event.target.closest('.article').style.display = 'none';
 }
+
+console.log(token);
 
 function addNewsCard(article) {
   const searchValue = searchInput.value;
@@ -236,7 +251,7 @@ function addNewsCard(article) {
   const articleCard = resultsContainer.lastElementChild;
   // console.log(articlePreparationed);
   // articleCard.querySelector('.article__icon_save').addEventListener('mouseover', showArticleMessageAuth);
-  articleCard.querySelector('.article__icon_save').addEventListener('click', addCard.bind(null, articlePreparationed));
+  articleCard.querySelector('.article__icon_save').addEventListener('click', addCard.bind(null, articlePreparationed, newsCard));
   return articleCreated;
 }
 

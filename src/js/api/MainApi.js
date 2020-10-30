@@ -100,7 +100,6 @@ export class MainApi {
       link,
       image,
     } = article;
-    console.log(article);
     // this.token = token;
     return fetch(`${this.config.baseUrl}/articles`, {
       method: 'POST',
@@ -119,7 +118,6 @@ export class MainApi {
       }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
       .catch((err) => {
         if (err.message === 'Failed to fetch') {
           return new Error(errorNotConnect);
@@ -132,17 +130,16 @@ export class MainApi {
 
   removeArticle(id, token) {
     const errorNotConnect = 'Во время запроса произошла ошибка';
-    this.token = token;
+    // this.token = token;
 
-    return fetch(`${this.config.baseUrl}/${id}`, {
+    return fetch(`${this.config.baseUrl}/articles/${id}`, {
       method: 'DELETE',
       headers: {
-        authorization: this.token,
+        authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
       .catch((err) => {
         if (err.message === 'Failed to fetch') {
           return new Error(errorNotConnect);
