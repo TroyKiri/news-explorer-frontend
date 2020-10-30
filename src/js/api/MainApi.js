@@ -100,11 +100,12 @@ export class MainApi {
       link,
       image,
     } = article;
-    this.token = token;
+    console.log(article);
+    // this.token = token;
     return fetch(`${this.config.baseUrl}/articles`, {
       method: 'POST',
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({

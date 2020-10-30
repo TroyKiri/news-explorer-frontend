@@ -4,6 +4,7 @@
 
 
 .article__message {
+  z-index: 5;
   position: absolute;
   top: 0px;
   right: 45px;
@@ -13,7 +14,7 @@
   border-radius: 10px;
   align-items: center;
   justify-content: center;
-  display: none;
+  /* display: none; */
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;

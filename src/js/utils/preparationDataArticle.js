@@ -1,5 +1,6 @@
-export const preparationDataArticle = function (article) {
+export const preparationDataArticle = function (article, keyword) {
   const articleData = {};
+  articleData.keyword = keyword;
   articleData.title = article.title;
   articleData.text = article.description || 'Нет описания';
   articleData.source = article.source.name;

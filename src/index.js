@@ -90,8 +90,6 @@ const newsCardList = new NewsCardList(
   failed,
 );
 
-// const newsCard = new NewsCard();
-
 // ФУНКЦИОНАЛ---------------------------------------------------------------------------------------
 
 // Открытие и закрытие меню
@@ -176,6 +174,7 @@ function signIn(event) {
           .catch((err) => err);
 
         popupLogin.hidePopup();
+        window.location.reload();
       }
       return Promise.reject(res.message);
     })
@@ -196,44 +195,57 @@ function exitFromAccount() {
 signOutButton.addEventListener('click', exitFromAccount);
 
 // Вывод сообщения о необходимости регистрации
-const saveIconArticle = document.querySelector('.article__icon_save');
-
 const showArticleMessageAuth = (event) => {
+  const token = auth.getToken();
   if (!token) {
     const articleMessage = event.target.querySelector('.article__message');
-    articleMessage.classList.toggle('article__message_not-visible');
+    console.log(articleMessage);
+    // articleMessage.classList.toggle('article__message_not-visible');
+    if (articleMessage.classList.contains('article__message_not-visible')) {
+      articleMessage.classList.remove('article__message_not-visible');
+      articleMessage.classList.add('article__message_is-visible');
+    } else if (articleMessage.classList.contains('article__message_is-visible')) {
+      articleMessage.classList.remove('article__message_is-visible');
+      articleMessage.classList.add('article__message_not-visible');
+    }
   }
 };
 
-// saveIconArticle.addEventListener('mouseover', showArticleMessageAuth);
-
 // Поиск статей
+function addCard(article, event) {
+  // console.log(article);
+  const icon = event.target.closest('.article__icon');
+  const token = auth.getToken();
+  if (icon.classList.contains('article__icon_save')) {
+    icon.classList.remove('article__icon_save');
+    icon.classList.add('article__icon_save-auth');
+    mainApi.createArticle(article, token);
+  } else if (icon.classList.contains('article__icon_save-auth')) {
+    icon.classList.remove('article__icon_save-auth');
+    icon.classList.add('article__icon_save');
+  }
+
+  // event.target.closest('.article').style.display = 'none';
+}
+
 function addNewsCard(article) {
-  const articlePreparationed = preparationDataArticle(article);
-  const html = `<div class="article">
-            <div class="article__info article__info_main">
-              <div class="article__icon article__icon_save">
-                <p class="article__message article__message_save">Войдите, чтобы сохранять статьи</p>
-              </div>
-            </div>
-            <img class="article__image" alt="image" src=${articlePreparationed.image}>
-            <div class="article__container">
-              <p class="article__date">${articlePreparationed.date}</p>
-              <h2 class="article__title">${articlePreparationed.title}</h2>
-              <p class="article__text">${articlePreparationed.text}</p>
-            </div>
-            <p class="article__source">${articlePreparationed.source}</p>
-          </div>`;
-  return resultsContainer.insertAdjacentHTML('beforeend', html);
+  const searchValue = searchInput.value;
+  const articlePreparationed = preparationDataArticle(article, searchValue);
+  const newsCard = new NewsCard(articlePreparationed, mainApi, resultsContainer, token);
+  const articleCreated = newsCard.createArticle();
+  const articleCard = resultsContainer.lastElementChild;
+  // console.log(articlePreparationed);
+  // articleCard.querySelector('.article__icon_save').addEventListener('mouseover', showArticleMessageAuth);
+  articleCard.querySelector('.article__icon_save').addEventListener('click', addCard.bind(null, articlePreparationed));
+  return articleCreated;
 }
 
 function showMoreCards() {
   const searchValue = searchInput.value;
-  console.log(newsCardList.counter);
   for (let i = newsCardList.counter; i < newsCardList.counter + CARDS_DISPLAY; i++) {
     if (newsCardList.articles[i]) {
-      addNewsCard(newsCardList.articles[i]);
-      // addNewsCard(newsCardList.articles[i], searchValue);
+      // addNewsCard(newsCardList.articles[i]);
+      addNewsCard(newsCardList.articles[i], searchValue);
     } else {
       newsCardList.showMore(false);
       break;
@@ -244,7 +256,6 @@ function showMoreCards() {
 
 const search = function (event) {
   event.preventDefault();
-  console.log(newsCardList.articles);
   if (newsCardList.articles !== undefined) {
     while (resultsContainer.firstChild) {
       resultsContainer.removeChild(resultsContainer.firstChild);
@@ -252,7 +263,6 @@ const search = function (event) {
   }
   // const token = auth.getToken();
   const searchValue = searchInput.value;
-  console.log(searchValue);
 
   newsCardList.showResults();
   newsCardList.renderPreloader();
@@ -269,12 +279,11 @@ const search = function (event) {
     .then((res) => {
       if (res.status === 'ok') {
         newsCardList.articles = res.articles;
-        console.log(newsCardList.articles);
         newsCardList.renderResults(showMoreCards);
         if (newsCardList.articles.length > 0) {
           for (let i = 0; i < CARDS_DISPLAY; i++) {
             if (newsCardList.articles[i]) {
-              addNewsCard(newsCardList.articles[i]);
+              addNewsCard(newsCardList.articles[i], searchValue);
             } else {
               break;
             }
@@ -285,58 +294,17 @@ const search = function (event) {
           }
           // searchForm.formEnabled();
         } else {
-          console.log('дошло');
           newsCardList.renderError();
+          // return Promise.reject(res.message);
           // searchForm.formEnabled();
         }
       }
-      formSearch.reset();
+      // formSearch.reset();
     })
     .catch((err) => {
       console.log(err);
+      newsCardList.renderError();
     });
 };
 
 buttonSearch.addEventListener('click', search);
-// buttonSearch.addEventListener('submit', search);
-
-// const resultsContainer = document.querySelector('.results__container');
-// const articles = resultsContainer.querySelectorAll('.article');
-// Кнопка показать ещё
-// const buttonMore = document.querySelector('.results__button');
-
-// функция добавления статей
-// function addArticle(image, date, title, text, source) {
-//   const html = `<div class="article">
-//             <div class="article__info article__info_main">
-//               <div class="article__icon article__icon_save">
-//                 <p class="article__message article__message_save">Войдите, чтобы сохранять статьи</p>
-//               </div>
-//             </div>
-//             <img class="article__image" alt="image" src=${image}>
-//             <div class="article__container">
-//               <p class="article__date">${date}</p>
-//               <h2 class="article__title">${title}</h2>
-//               <p class="article__text">${text}</p>
-//             </div>
-//             <p class="article__source">${source}</p>
-//           </div>`;
-//   return resultsContainer.insertAdjacentHTML('beforeend', html);
-// }
-
-// function addListArticles(articles) {
-//   articles.forEach(function (article, index) {
-//     // if (index <=2) {
-//     //
-//     // }
-//     addArticle(article.image, article.date, article.title, article.text, article.source);
-
-//   });
-// };
-
-// addListArticles(initialArticles);
-// console.log(addListArticles);
-// const articles = resultsContainer.querySelectorAll('.article');
-// console.log(articles);
-
-// buttonMore.addEventListener('click', addListArticles(articles));

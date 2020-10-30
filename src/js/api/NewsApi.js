@@ -29,6 +29,7 @@ export class NewsApi {
       .then((res) => res.json())
       .catch((err) => {
         if (err.message === 'Failed to fetch') {
+          console.log(err);
           return new Error(errorNotConnect);
         }
         return new Error(err);
