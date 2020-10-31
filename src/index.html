@@ -23,13 +23,13 @@
           <div class="header__container_menu">
             <ul class="header__links_menu">
               <li><a class="header__link_menu" href="index.html" target="_blank">Главная</a></li>
-              <li><a class="header__link_menu header__link_not-visible" id="saved-articles" href="articles.html" target="_blank">Сохранённые статьи</a></li>
+              <li><a class="header__link_menu header__link_not-visible" id="saved-articles-menu" href="articles.html" target="_blank">Сохранённые статьи</a></li>
             </ul>
-            <button class="button button__header_menu">Авторизоваться</button>
-            <!-- <button class="button button__header_menu button__header_login">
-              <span class="button__header_text">Грета</span>
+            <button class="button button__header_menu" id="button-header-menu-auth">Авторизоваться</button>
+            <button class="button button__header_menu button__header_login button__not-visible" id="button-header-menu-signout">
+              <span class="button__header_text"></span>
               <img class="button__header_logout" src="<%=require('./images/logout.png')%>" alt="logout">
-            </button> -->
+            </button>
           </div>
         </div>
       </section>

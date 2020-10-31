@@ -40,3 +40,20 @@ export const preparationDataArticle = function (article, keyword) {
   articleData.image = article.urlToImage || 'https://www.dom-textilya.ru/images/no_image.png';
   return articleData;
 };
+
+export const frequentElement = function (arr) {
+  let count1 = 0;
+  let count2 = 0;
+  let item;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i; j < arr.length; j++) {
+      if (arr[i] === arr[j]) count1++;
+      if (count2 < count1) {
+        count2 = count1;
+        item = arr[i];
+      }
+    }
+    count1 = 0;
+  }
+  return item;
+};

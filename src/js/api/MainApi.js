@@ -26,7 +26,7 @@ export class MainApi {
       });
   }
 
-  // Аутентификация полдьзователя
+  // Аутентификация пользователя
 
   signin({ email, password }) {
     const errorNotConnect = 'Во время запроса произошла ошибка';

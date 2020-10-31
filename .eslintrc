@@ -15,7 +15,8 @@
     "arrow-body-style":"off",
     "no-alert":"off",
     "no-restricted-globals":"off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "no-shadow":"off"
   },
   "env": {
     "browser": true

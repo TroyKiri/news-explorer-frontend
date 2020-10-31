@@ -20,6 +20,7 @@ import { NewsCard } from './js/components/NewsCard';
 // Шапка сайта
 const elHeader = document.querySelector('.header');
 const elHeaderContainer = elHeader.querySelector('.header__container');
+const elHeaderMenuContainer = document.querySelector('.header__container_menu');
 // Всплывающее меню шапки сайта для мобильной версии
 const elMenu = document.querySelector('.menu');
 const menuButtonOpen = elHeader.querySelector('.header__icon');
@@ -39,6 +40,7 @@ const elPopupSuccess = document.querySelector('#popup-success');
 // Кнопки для входа (login)
 const buttonHeaderMenu = document.querySelector('.button__header_menu');
 const buttonHeaderMain = document.querySelector('#button-header-auth');
+const buttonHeaderMenuMain = document.querySelector('#button-header-menu-auth');
 const linkLogin = elPopupSignUp.querySelector('#popup-link-login');
 const linkSuccessLogin = elPopupSuccess.querySelector('#popup-success-link-login');
 const buttonSignIn = elPopupLogin.querySelector('.popup__button_signin');
@@ -47,6 +49,7 @@ const linkSignUp = elPopupLogin.querySelector('#popup-link-signup');
 const buttonSignUp = elPopupSignUp.querySelector('.popup__button_signup');
 // Кнопка выхода
 const signOutButton = elHeader.querySelector('#button-header-signout');
+const signOutButtonMenu = document.querySelector('#button-header-menu-signout');
 
 // ФОРМА ПОИСКА СТАТЕЙ
 const formSearch = document.querySelector('.search__form');
@@ -67,7 +70,15 @@ const CARDS_DISPLAY = 3;
 // ЭКЗЕМПЛЯРЫ КЛАССОВ-------------------------------------------------------------------------------
 
 // Экземпляр класса Header
-const header = new Header(elMenu, buttonHeaderMain, signOutButton, elHeaderContainer);
+const header = new Header(
+  elMenu,
+  buttonHeaderMain,
+  buttonHeaderMenuMain,
+  signOutButton,
+  signOutButtonMenu,
+  elHeaderContainer,
+  elHeaderMenuContainer,
+);
 // Экземпляры попапов
 const popupLogin = new Popup(elPopupLogin, formLogin, menuButtonOpen);
 const popupSignUp = new Popup(elPopupSignUp, formSignUp, menuButtonOpen);
@@ -168,7 +179,7 @@ function signIn(event) {
   const formData = formEntry.getInfo();
   mainApi.signin(formData)
     .then((res) => {
-      // const { token } = res;
+      const { token } = res;
       if (token) {
         auth.setToken(token);
         mainApi.getUserData(token)
@@ -195,6 +206,7 @@ function exitFromAccount() {
   }
 }
 signOutButton.addEventListener('click', exitFromAccount);
+signOutButtonMenu.addEventListener('click', exitFromAccount);
 
 // Вывод сообщения о необходимости регистрации
 const showArticleMessageAuth = (event) => {
@@ -227,20 +239,16 @@ function addCard(article, newsCard, event) {
           articleAdded.id = res.article._id;
         })
         .catch((err) => console.log(err));
-      console.log(articleAdded);
     } else if (icon.classList.contains('article__icon_save-auth')) {
       icon.classList.remove('article__icon_save-auth');
       icon.classList.add('article__icon_save');
       const articleAdded = event.target.closest('.article');
-      console.log(articleAdded);
       mainApi.removeArticle(articleAdded.id, token)
         .catch((err) => console.log(err));
     }
   }
   // event.target.closest('.article').style.display = 'none';
 }
-
-console.log(token);
 
 function addNewsCard(article) {
   const searchValue = searchInput.value;
