@@ -1,0 +1,13 @@
+.background {
+  background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-height: 576px;
+}
+
+@media screen and (min-width:658px) and (max-width: 1023px) {
+  .background {
+    max-height: 400px;
+  }
+}

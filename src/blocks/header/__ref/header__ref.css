@@ -1,0 +1,15 @@
+@import url(./_not-auth/header__ref_not-auth.css);
+
+.header__ref {
+  margin-right: 0;
+}
+
+.header__ref:last-child {
+  margin-left: 34px;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1023px) {
+  .header__ref:last-child {
+    margin-left: 17px;
+  }
+}

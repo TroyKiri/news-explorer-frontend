@@ -1,0 +1,28 @@
+@import url(./_auth/button__header_not-login.css);
+@import url(./_auth/button__header_login.css);
+@import url(./_text/button__header_text.css);
+@import url(./_logout/button__header_logout.css);
+@import url(./_menu/button__header_menu.css);
+@import url(./_articles/button__header_articles.css);
+@import url(./_main/button__header_main.css);
+
+.button__header {
+  margin-top: 19px;
+  margin-left: 32px;
+  background: transparent;
+  height: 48px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1023px) {
+  .button__header {
+    margin-top: 14px;
+    margin-left: 16px;
+    height: 40px;
+    font-size: 16px;
+  }
+}

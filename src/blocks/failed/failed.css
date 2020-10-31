@@ -1,0 +1,13 @@
+@import url(./__image/failed__image.css);
+@import url(./__title/failed__title.css);
+@import url(./__text/failed__text.css);
+
+.failed {
+  padding-top: 86px;
+  padding-bottom: 80px;
+  background-color: #F5F6F7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}

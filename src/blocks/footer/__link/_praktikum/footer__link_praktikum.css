@@ -1,0 +1,9 @@
+.footer__link_praktikum {
+  width: 192px;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1023px) {
+  .footer__link_praktikum {
+    max-width: 176px;
+  }
+}

@@ -1,0 +1,10 @@
+.popup__button_login {
+  margin-top: 39px;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 657px) {
+  .popup__button_login {
+    margin-top: 23px;
+  }
+}

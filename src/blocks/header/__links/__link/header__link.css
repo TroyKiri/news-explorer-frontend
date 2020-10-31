@@ -1,0 +1,26 @@
+@import url(./_menu/header__link_menu.css);
+@import url(./_main/header__link_main.css);
+@import url(./_articles/header__link_articles.css);
+
+.header__link {
+  margin-right: 0;
+  margin-left: 0;
+  padding-bottom: 23px;
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.header__link:hover {
+  cursor: url('../../../../images/Pointer.png'), pointer;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1023px) {
+  .header__link {
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,20 @@
+@import url(./_delete/article__icon_delete.css);
+@import url(./_save/article__icon_save.css);
+@import url(./_save-auth/article__icon_save-auth.css);
+@import url(../__message/article__message.css);
+
+.article__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* @media screen and (min-width: 1024px) {
+  .article__icon:hover .article__message {
+    display: flex;
+    z-index: 999;
+  }
+} */

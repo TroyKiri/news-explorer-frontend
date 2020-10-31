@@ -1,0 +1,14 @@
+.article__keyword {
+  margin: 0;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 40px;
+  color: #000000;
+}

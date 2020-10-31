@@ -1,0 +1,22 @@
+.about__text {
+  margin-top: 0;
+  max-width: 600px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+}
+
+@media screen and (min-width: 658px) and (max-width: 1023px) {
+  .about__text {
+    max-width: 424px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 657px) {
+  .about__text {
+    margin: 0 auto;
+    min-width: 288px;
+  }
+}

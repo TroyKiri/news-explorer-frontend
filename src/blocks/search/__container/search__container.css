@@ -1,0 +1,18 @@
+.search__container {
+  margin: 80px auto 64px;
+  width: 608px;
+}
+
+@media screen and (min-width:500px) and (max-width: 1023px) {
+  .search__container {
+    margin: 38px auto 48px;
+    width: 448px;
+  }
+}
+
+@media screen and (min-width:320px) and (max-width: 657px) {
+  .search__container {
+    margin: 30px auto 32px;
+    width: 288px;
+  }
+}
