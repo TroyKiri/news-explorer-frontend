@@ -9,41 +9,35 @@ export class Popup extends BaseComponent {
   }
 
   open() {
-    if (this.container.id === 'popup-signup') {
+    if (this.container.id === 'popup-success') {
+      this.container.classList.add('popup_is-opened');
+      this.container.querySelector('.popup__close').addEventListener('click', this.exit.bind(this));
+      this.container.querySelector('.popup__link').addEventListener('click', this.close.bind(this));
+    } else {
       // Сброс значений инпутов
       this.form.reset();
       // Удаление ошибок
       this.deleteErrors();
+      // Открытие попапа
       this.container.classList.add('popup_is-opened');
-      this.container.querySelector('.popup__close').addEventListener('click', this.close.bind(this));
-      this.container.querySelector('.popup__link').addEventListener('click', this.close.bind(this));
-      this.buttonMenu.style.opacity = 0;
+      // Вешаем слушатели
+      this.container.querySelector('.popup__close').addEventListener('click', this.exit.bind(this)); // закрытие попапа по нажатию на крестик
+      this.container.querySelector('.popup__link').addEventListener('click', this.close.bind(this)); // закрытие попапа по нажатию на ссылку (регистрация или вход)
+      // Отключаем кнопку
       this.form.elements.submit.disabled = true;
       this.form.elements.submit.classList.remove('popup__button_active');
-    } else if (this.container.id === 'popup-success') {
-      this.container.classList.add('popup_is-opened');
-      this.container.querySelector('.popup__close').addEventListener('click', this.close.bind(this));
-      this.container.querySelector('.popup__link').addEventListener('click', this.close.bind(this));
-    } else if (this.container.id === 'popup-login') {
-      // Сброс значений инпутов
-      this.form.reset();
-      // Удаление ошибок
-      this.deleteErrors();
-      this.container.classList.add('popup_is-opened');
-      this.container.querySelector('.popup__close').addEventListener('click', this.close.bind(this));
-      this.container.querySelector('.popup__link').addEventListener('click', this.close.bind(this));
+      // Скрываем кнопку меню
       this.buttonMenu.style.opacity = 0;
-      this.form.elements.submit.disabled = true;
-      this.form.elements.submit.classList.remove('popup__button_active');
     }
   }
 
+  exit(event) {
+    this.buttonMenu.style.opacity = 1;
+    const popup = event.target.closest('.popup');
+    popup.classList.remove('popup_is-opened');
+  }
+
   close(event) {
-    // if (this.container.classList.contains('popup_is-opened')) {
-    //   this.buttonMenu.style.opacity = 0;
-    // } else {
-    //   this.buttonMenu.style.opacity = 1;
-    // }
     const popup = event.target.closest('.popup');
     popup.classList.remove('popup_is-opened');
   }

@@ -2,6 +2,7 @@ import './style.css';
 
 // Подключение констант
 import { mainConfig, newsConfig } from './js/constants/config';
+// Подключение вспомогательных функций
 import { preparationDataArticle } from './js/utils/preparationDataArticle';
 
 // Подключение классов компонентов
@@ -59,7 +60,8 @@ const preloader = document.querySelector('.loading');
 const failed = document.querySelector('.failed');
 
 // Массив статей
-let savedArticles = [];
+// let savedArticles = [];
+// Количество отображаемых статей
 const CARDS_DISPLAY = 3;
 
 // ЭКЗЕМПЛЯРЫ КЛАССОВ-------------------------------------------------------------------------------
@@ -166,7 +168,7 @@ function signIn(event) {
   const formData = formEntry.getInfo();
   mainApi.signin(formData)
     .then((res) => {
-      const { token } = res;
+      // const { token } = res;
       if (token) {
         auth.setToken(token);
         mainApi.getUserData(token)
@@ -196,10 +198,9 @@ signOutButton.addEventListener('click', exitFromAccount);
 
 // Вывод сообщения о необходимости регистрации
 const showArticleMessageAuth = (event) => {
-  const token = auth.getToken();
+  // const token = auth.getToken();
   if (!token) {
     const articleMessage = event.target.querySelector('.article__message');
-    console.log(articleMessage);
     // articleMessage.classList.toggle('article__message_not-visible');
     if (articleMessage.classList.contains('article__message_not-visible')) {
       articleMessage.classList.remove('article__message_not-visible');
@@ -215,7 +216,7 @@ const showArticleMessageAuth = (event) => {
 function addCard(article, newsCard, event) {
   // console.log(article);
   const icon = event.target.closest('.article__icon');
-  const token = auth.getToken();
+  // const token = auth.getToken();
   if (token) {
     if (icon.classList.contains('article__icon_save')) {
       icon.classList.remove('article__icon_save');
@@ -236,8 +237,6 @@ function addCard(article, newsCard, event) {
         .catch((err) => console.log(err));
     }
   }
-
-
   // event.target.closest('.article').style.display = 'none';
 }
 
@@ -249,8 +248,9 @@ function addNewsCard(article) {
   const newsCard = new NewsCard(articlePreparationed, mainApi, resultsContainer, token);
   const articleCreated = newsCard.createArticle();
   const articleCard = resultsContainer.lastElementChild;
-  // console.log(articlePreparationed);
-  // articleCard.querySelector('.article__icon_save').addEventListener('mouseover', showArticleMessageAuth);
+
+  articleCard.querySelector('.article__icon_save').addEventListener('mouseover', showArticleMessageAuth);
+  articleCard.querySelector('.article__icon_save').addEventListener('mouseout', showArticleMessageAuth);
   articleCard.querySelector('.article__icon_save').addEventListener('click', addCard.bind(null, articlePreparationed, newsCard));
   return articleCreated;
 }
@@ -259,7 +259,6 @@ function showMoreCards() {
   const searchValue = searchInput.value;
   for (let i = newsCardList.counter; i < newsCardList.counter + CARDS_DISPLAY; i++) {
     if (newsCardList.articles[i]) {
-      // addNewsCard(newsCardList.articles[i]);
       addNewsCard(newsCardList.articles[i], searchValue);
     } else {
       newsCardList.showMore(false);
@@ -278,10 +277,12 @@ const search = function (event) {
   }
   // const token = auth.getToken();
   const searchValue = searchInput.value;
-
   newsCardList.showResults();
   newsCardList.renderPreloader();
 
+  if (searchValue.length === 0) {
+    newsCardList.renderError();
+  }
   // if (token) {
   //   mainApi
   //     .getArticles(token)

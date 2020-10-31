@@ -10,21 +10,6 @@ export class Form extends BaseComponent {
     this._showError(err);
   }
 
-  // setServerError(err) {
-  //   const errorElement = this._generateError(err);
-
-  //   this
-  //     ._submitButton
-  //     .parentElement
-  //     .insertBefore(
-  //       errorElement,
-  //       this._submitButton
-  //     )
-
-  //   this.formEnabled();
-  //   this._submitButtonDisabled(this._submitButton);
-  // }
-
   _showError(text) {
     const error = this._findElement(this.form, '.popup__error-message_user');
     error.style.display = 'block';
@@ -59,7 +44,11 @@ export class Form extends BaseComponent {
       button.classList.remove('popup__button_signup-valid');
       button.classList.add('popup__button_signup-invalid');
     } else if (input.validity.tooLong || input.validity.tooShort) {
-      error.textContent = validErrors.nameLength;
+      if (input.type === 'password') {
+        error.textContent = validErrors.passwordLength;
+      } else if (input.type === 'text') {
+        error.textContent = validErrors.nameLength;
+      }
       error.classList.add('popup__error-message_invalid-input');
       error.classList.remove('popup__error-message_valid-input');
       input.classList.add('popup__input_invalid');

@@ -28,38 +28,18 @@ export class NewsCard {
                 <p class="article__message article__message_save article__message_not-visible">Войдите, чтобы сохранять статьи</p>
               </div>
             </div>
-            <img class="article__image" alt="image" src=${this.image}>
-            <div class="article__container">
-              <p class="article__date">${this.date}</p>
-              <h2 class="article__title">${this.title}</h2>
-              <p class="article__text">${this.text}</p>
-            </div>
+            <img class="article__image" alt="image" src = ${this.image}>
+            <a class = "article__link" href = ${this.link} target = "_blank">
+              <div class="article__container">
+                <p class="article__date">${this.date}</p>
+                <h2 class="article__title">${this.title}</h2>
+                <p class="article__text">${this.text}</p>
+              </div>
+            </a>
             <p class="article__source">${this.source}</p>
           </div>`;
     this.container.insertAdjacentHTML('beforeend', html);
 
-    const article = this.container.lastElementChild;
-    this.article = article;
-
-    const icon = this.article.querySelector('.article__message_save');
-    this.icon = icon;
-    // this.icon.addEventListener('click', this._addArticle(this.props, this.token, icon).bind(this));
-
     return this.container;
   }
-
-  _addArticle(art, token, elem) {
-    this.api.createArticle(art, token);
-    elem.classList.remove('.article__icon_save');
-    elem.classList.add('.article__icon_save-auth');
-  }
-
-  // remove(event) {
-  //   if (window.confirm('Вы действительно хотите удалить статью?')) {
-  //     const id = (event.target.closest('.article')).id;
-  //     //apiMesto.deleteCard(id);
-  //     this.api.deleteCard(id);
-  //     this.container.removeChild(event.target.closest('.place-card'));
-  //   }
-  // }
 }

@@ -1,5 +1,6 @@
 export const mainConfig = {
-  baseUrl: 'https://api.news-explorer-app.ml',
+  // baseUrl: 'https://api.news-explorer-app.ml',
+  baseUrl: 'https://localhost:3000',
   headers: {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': 'http://localhost:8080/',

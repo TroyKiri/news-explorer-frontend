@@ -1,6 +1,7 @@
 @import url(./_delete/article__message_delete.css);
 @import url(./_save/article__message_save.css);
 @import url(./_not-visible/article__message_not-visible.css);
+@import url(./_is-visible//article__message_is-visible.css);
 
 
 .article__message {
@@ -12,9 +13,9 @@
   background-color: #FFF;
   height: 40px;
   border-radius: 10px;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
-  /* display: none; */
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
