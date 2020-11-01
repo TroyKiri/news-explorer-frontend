@@ -1,6 +1,8 @@
 @import url(./_menu/header__link_menu.css);
 @import url(./_main/header__link_main.css);
 @import url(./_articles/header__link_articles.css);
+@import url(./_is-visible/header__link_is-visible.css);
+@import url(./_not-visible/header__link_not-visible.css);
 
 .header__link {
   margin-right: 0;

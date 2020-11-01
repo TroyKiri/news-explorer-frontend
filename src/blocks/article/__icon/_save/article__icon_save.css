@@ -8,9 +8,9 @@
   background-image: url('../../../../images/save-not-auth-hover.png');
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .article__icon_save:hover .article__message {
     display: flex;
     z-index: 999;
   }
-}
+} */

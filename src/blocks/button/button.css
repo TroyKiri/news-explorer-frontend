@@ -1,5 +1,7 @@
 @import url(./__header/button__header.css);
 @import url(./__search/button__search.css);
+@import url(./__is-visible/button__is-visible.css);
+@import url(./__not-visible/button__not-visible.css);
 
 .button {
   box-sizing: border-box;

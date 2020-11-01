@@ -8,9 +8,9 @@
   background-image: url('../../../../images/button-delete-hover.png');
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .article__icon_delete:hover .article__message {
     display: flex;
     z-index: 999;
   }
-}
+} */
