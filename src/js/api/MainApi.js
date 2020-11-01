@@ -9,7 +9,7 @@ export class MainApi {
     const errorNotConnect = 'Во время запроса произошла ошибка';
     return fetch(`${this.config.baseUrl}/signup`, {
       method: 'POST',
-      credentials: 'include',
+      // credentials: 'include',
       headers: this.config.headers,
       body: JSON.stringify({
         email,
@@ -32,6 +32,7 @@ export class MainApi {
     const errorNotConnect = 'Во время запроса произошла ошибка';
     return fetch(`${this.config.baseUrl}/signin`, {
       method: 'POST',
+      // credentials: 'include',
       headers: this.config.headers,
       body: JSON.stringify({
         email,
@@ -54,6 +55,7 @@ export class MainApi {
     const errorNotConnect = 'Во время запроса произошла ошибка';
     return fetch(`${this.config.baseUrl}/users/me`, {
       method: 'GET',
+      // credentials: 'include',
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -74,6 +76,7 @@ export class MainApi {
     const errorNotConnect = 'Во время запроса произошла ошибка';
     return fetch(`${this.config.baseUrl}/articles`, {
       method: 'GET',
+      // credentials: 'include',
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -103,6 +106,7 @@ export class MainApi {
     // this.token = token;
     return fetch(`${this.config.baseUrl}/articles`, {
       method: 'POST',
+      // credentials: 'include',
       headers: {
         authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
@@ -134,6 +138,7 @@ export class MainApi {
 
     return fetch(`${this.config.baseUrl}/articles/${id}`, {
       method: 'DELETE',
+      // credentials: 'include',
       headers: {
         authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
